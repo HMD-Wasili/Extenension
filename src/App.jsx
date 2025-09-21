@@ -17,9 +17,9 @@ const logoMap = Object.fromEntries(
 
 function App() {
   return (
-    <div className="w-screen">
-      <div className=" w-full lg:w-1440px sm:w-375px bg-sky-200/20 pt-2 text-base ">
-        <div>
+    <div className="">
+      <div className="lg:w-1440px sm:w-375px min-h-screen bg-sky-100 pt-2 text-base ">
+        <div className="">
           <Nav />
         </div>
 
@@ -29,12 +29,12 @@ function App() {
 
         <div className="">
           <Mycard />
-          <div className="grid lg:grid-col-3 md:grid-cols-2 sm:grid-clos-1 justify-between items-center font-sans p-9 ">
-            {data.map((item, index) => (
+          <div className="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-clos-1 justify-between items-center  font-sans p-9 ">
+            {data.map((item, id) => (
               <Mycard
-                key={index}
+                key={id}
                 logo={logoMap[item.logo.split("/").pop()]} // يجيب الصورة الصحيحة
-                //isActive={item.isActive}
+                isActive={item.isActive}
                 name={item.name}
                 description={item.description}
               />
