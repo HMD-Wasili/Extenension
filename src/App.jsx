@@ -26,10 +26,10 @@ function App() {
   });
 
   // isActive
-  const toggleActive = (index) => {
-    const updatedCards = [...cards];
+  const toggleActive = (index) => { // toggleActive
+    const updatedCards = [...cards]; // copy from cards
     updatedCards[index].isActive = !updatedCards[index].isActive;
-    setCards(updatedCards);
+    setCards(updatedCards); // change the state 
   };
 
   return (
