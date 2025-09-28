@@ -3,7 +3,8 @@ import Nav from "./Nav.jsx";
 import MyCard from "./MyCard.jsx";
 import data from "./data.json";
 import Active from "./Active.jsx";
-import { useState } from "react";
+// import axios from "axios";
+import { useEffect, useState } from "react";
 
 const logos = import.meta.glob("./assets/images/*.svg", { eager: true });
 
@@ -18,6 +19,7 @@ function App() {
   const [filter, setFilter] = useState("All");
   const [cards, setCards] = useState(data); // Switch state
 
+
   // Filtering
   const data1 = cards.filter((item) => {
     if (filter === "All") return true;
@@ -26,20 +28,21 @@ function App() {
   });
 
   // isActive
-  const toggleActive = (index) => { // toggleActive
+  const toggleActive = (index) => {
+    // toggleActive
     const updatedCards = [...cards]; // copy from cards
     updatedCards[index].isActive = !updatedCards[index].isActive;
-    setCards(updatedCards); // change the state 
+    setCards(updatedCards); // change the state
   };
 
   return (
     <div className="bg-sky-200/40 min-h-screen">
-      <div className="grid lg:w-1440px sm:w-375px min-h-full  pt-2 text-base ">
+      <div className="grid lg:w-1440px sm:w-375px pt-2 text-base ">
         <Nav />
 
         <Active filter={filter} setFilter={setFilter} />
 
-        <div className="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-6 p-9">
+        <div className="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-4  ">
           {data1.map((item, index) => (
             <MyCard
               key={index}

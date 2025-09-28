@@ -2,9 +2,9 @@ import "./index.css";
 
 function MyCard({ logo, isActive, name, description, onToggle }) {
   return (
-    <div className="p-6 gap-5">
+    <div className="p-6 gap-5 ">
       <div
-        className={`shadow-lg p-4 flex flex-col justify-between rounded-3xl gap-4 w-80 h-44 ${
+        className={`shadow-lg p-4 flex flex-col justify-between rounded-3xl gap-6 mx-8 lg:w-5/6  h-44 ${
           isActive ? "bg-white" : "bg-gray-200 opacity-70"
         }`}
       >
