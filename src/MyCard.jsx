@@ -15,7 +15,7 @@ function MyCard({ logo, isActive, name, description, onToggle }) {
           </div>
           <div>
             <h3 className="text-lg font-bold">{name}</h3>
-            <p className="text-sm text-neutral-600">{description}</p>
+            <h4 className="text-sm text-neutral-600">{description}</h4 >
           </div>
         </div>
 
@@ -34,6 +34,12 @@ function MyCard({ logo, isActive, name, description, onToggle }) {
             ></div>
           </button>
         </div>
+
+        {/* <div className="flex justify-start items-center">
+          <button  
+           onClick={on} >
+          </button>
+        </div> */}
       </div>
     </div>
   );
