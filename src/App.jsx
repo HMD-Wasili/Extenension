@@ -28,14 +28,32 @@ function App() {
   2-   الطريقة الثانية  arrow function 
     const arrow = () => console.log("Hammad is threatening me")
     arrow();
+
+    EXM:
+     const arrow = (name, age) => {
+    console.log(`what's up ${name}`);
+    console.log(`Just look up and moving forward your age is ${age}`);
+  };
+  arrow("Hamad", 28);
   
-      EX for the second Way:
+  3-
+      Some of what ARROW FUNCTIONS has do:
+       1
+      const numbers = [1, 2, 3, 4, 5, 6];
+      const squares = numbers.map((element) => Math.pow(element, 2) );
+      console.log(squares);
+
+      2
+      const numbers = [1, 2, 3, 4, 5, 6];
+      const evenNums = numbers.filter((element) => element % 2 === 0) );   ما يحتاج تحط return اذا كان سطر واحد
+      console.log(evenNums);
+
       */
   }
-      const arrow = (name, age) => {console.log(`what's up ${name}`);
-      console.log(`Just look up and moving forward your age is ${age}`)};
-      arrow("Hamad", 28);
 
+      
+
+ 
 
   // const [filter, setFilter] = useState("All");
   // const [cards, setCards] = useState(data); // Switch state
@@ -52,6 +70,8 @@ function App() {
     baseURL: "https://base-tamimha.techwin.sa/api/",
   });
 
+
+  // GET CARDS  
   const getCards = async () => {
     setIsLoading(true);
 
@@ -63,6 +83,18 @@ function App() {
       isLoading(false);
       console.log(error);
     }
+  };
+
+  // DELETE CARDS=
+  const deleteCard = async(id) => {
+    try {
+     const response = await extensionAPI.delete(`cards/delet/${id}`);
+      console.log(response)
+
+    } catch (error) {
+      console.error(error)
+    }
+
   };
 
   useEffect(() => {
